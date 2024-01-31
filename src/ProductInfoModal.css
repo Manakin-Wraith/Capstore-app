@@ -1,0 +1,43 @@
+/* ProductInfoModal.css */
+
+.product-info-modal {
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.product-info-content {
+  color: #fff;
+  padding: 20px;
+  background-color: #333; /* Adjust the background color to match your design */
+  border-radius: 8px; /* Add border radius for a softer look */
+  max-width: 80%; /* Set a maximum width for the modal */
+  text-align: left; /* Align text to the left */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle box shadow for depth */
+  margin: 20px; /* Add margin for better spacing */
+}
+
+.product-info-content p {
+  margin-bottom: 10px;
+}
+
+.product-info-close {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.product-info-close:hover {
+  background-color: #555;
+}
