@@ -1,6 +1,6 @@
 // ProductPage.js
 import React, { useState, useEffect } from 'react';
-import { Button, Card, Modal } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import { useAuth } from './Pages/AuthContext';
 import { useCart } from './Pages/CartContext';
 import ProductInfoModal from './ProductInfoModal'; // Import the new component

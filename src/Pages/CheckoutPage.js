@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './CheckoutPage.css';
 
 const CheckoutPage = ({ location }) => {
-  const { products, totalAmount, vat, shippingCosts} = location.state;
+  const { totalAmount, vat, shippingCosts} = location.state;
 
   const handleConfirmation = () => {
     // Implement your confirmation logic here
