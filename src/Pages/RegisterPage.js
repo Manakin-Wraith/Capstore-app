@@ -1,9 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { useAuth } from './AuthContext';
+import { registerUser } from '../Actions/registerActions'; // Make sure this path is correct
 import { useFormik } from 'formik';
-import * as Yup from 'yup'; // Import Yup for validation
-import { useHistory } from 'react-router-dom'; // Import useHistory
+import * as Yup from 'yup';
+import { useHistory } from 'react-router-dom';
 import './RegisterPage.css';
+
 
 const RegisterPage = () => {
   const { register } = useAuth();
@@ -120,4 +123,8 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+const mapDispatchToProps = {
+  registerUser,
+};
+
+export default connect(null, mapDispatchToProps)(RegisterPage);

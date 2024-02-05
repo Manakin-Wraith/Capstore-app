@@ -5,6 +5,7 @@ import userReducer from './userReducer';
 import checkoutReducer from './checkoutReducer';
 import helpReducer from './helpReducer';
 import homeReducer from './homeReducer';
+import registerReducer from './registerReducer';
 
 const rootReducer = combineReducers({
   cart: cartReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   checkout:checkoutReducer,
   help: helpReducer,
   home: homeReducer,
+  register: registerReducer,
   // Add more reducers as needed
 });
 
