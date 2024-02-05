@@ -1,17 +1,16 @@
-// CartPage.js
-import React, { useState } from 'react';
-import { useCart } from './CartContext';
+// src/Pages/CartPage.js
+import React from 'react';
+import { connect } from 'react-redux';
+import { addToCart, removeFromCart, updateShipping } from '../Actions/cartActions';
 import { Container, ListGroup, Image, Button, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import './CartPage.css';
 
-const CartPage = () => {
-  const { cart, removeFromCart } = useCart();
-  const [selectedShipping, setSelectedShipping] = useState('standard');
+const CartPage = ({ cart, addToCart, removeFromCart, selectedShipping, updateShipping }) => {
   const history = useHistory();
 
   const handleShipmentChange = (e) => {
-    setSelectedShipping(e.target.value);
+    updateShipping(e.target.value);
   };
 
   const handleCheckout = () => {
@@ -114,4 +113,15 @@ const CartPage = () => {
   );
 };
 
-export default CartPage;
+const mapStateToProps = (state) => ({
+  cart: state.cart.cartItems,
+  selectedShipping: state.cart.selectedShipping,
+});
+
+const mapDispatchToProps = {
+  addToCart,
+  removeFromCart,
+  updateShipping,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartPage);
