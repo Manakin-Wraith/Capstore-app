@@ -1,16 +1,16 @@
 // HelpPage.js
 import React from 'react';
+import { connect } from 'react-redux';
 import { Container, Button } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom'; // Import the useHistory hook
+import { navigateBackToCart } from '../Actions/helpPageActions'; // Make sure this path is correct
 import './HelpPage.css';
 
-const HelpPage = () => {
-  const history = useHistory(); // Initialize the useHistory hook
-
+const HelpPage = ({ navigateBackToCart }) => {
   const handleBackToCart = () => {
-    // Navigate back to the CartPage when the "Back to Cart" button is clicked
-    history.push('/cart');
+    // Dispatch the navigateBackToCart action
+    navigateBackToCart();
   };
+
 
   return (
     <Container className="help-page-container">
@@ -42,4 +42,9 @@ const HelpPage = () => {
   );
 };
 
-export default HelpPage;
+
+const mapDispatchToProps = {
+  navigateBackToCart,
+};
+
+export default connect(null, mapDispatchToProps)(HelpPage);

@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from React Router
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { useAuth } from './AuthContext';
+import { loginUser } from '../Actions/homeActions'; // Make sure this path is correct
 import { useFormik } from 'formik';
 import './HomePage.css';
 
-const HomePage = () => {
-  const { login, user } = useAuth();
+const HomePage = ({ loginUser, user }) => {
+  const { login } = useAuth();
 
   // Formik for login form
   const loginFormik = useFormik({
@@ -14,6 +16,9 @@ const HomePage = () => {
       password: '',
     },
     onSubmit: (values) => {
+      // Dispatch the loginUser action
+      loginUser(values);
+      // Use your existing login logic if needed
       login(values);
     },
   });
@@ -69,4 +74,12 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+const mapStateToProps = (state) => ({
+  user: state.user.user,
+});
+
+const mapDispatchToProps = {
+  loginUser,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
