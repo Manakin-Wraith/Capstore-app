@@ -1,15 +1,13 @@
 // Header.js
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useCart } from '../Pages/CartContext';
-import { useAuth } from '../Pages/AuthContext';
-import './Header.css'; 
+import { setUser } from '../Actions/userActions'; 
+import './Header.css';
 
 // Header component responsible for displaying the navigation bar and user information.
-const Header = () => {
-  // Access user and cart information using custom hooks from AuthContext and CartContext.
-  const { user } = useAuth();
-  const { cart } = useCart();
+const Header = ({ user, cart }) => {
+  
 
   return (
     <div className="header-container">
@@ -36,4 +34,13 @@ const Header = () => {
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => ({
+  user: state.user.user,
+  cart: state.cart.cartItems,
+});
+
+const mapDispatchToProps = {
+  setUser,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

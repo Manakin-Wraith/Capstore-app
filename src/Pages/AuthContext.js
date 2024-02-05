@@ -1,21 +1,18 @@
-// Example component structure
-// AuthProvider should wrap your entire application to provide authentication context
-
 // AuthContext.js
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext } from 'react';
+import { connect } from 'react-redux';
+import { setUser } from '../actions/userActions';
 
 const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-
+const AuthProvider = ({ children, setUser }) => {
   const login = (userData) => {
-    // Implement your login logic and set the user in the state
+    // Implement your login logic and dispatch the setUser action
     setUser(userData);
   };
 
   const register = (userData) => {
-    // Implement your registration logic and set the user in the state
+    // Implement your registration logic and dispatch the setUser action
     setUser(userData);
   };
 
@@ -25,11 +22,19 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, register, logout }}>
+    <AuthContext.Provider value={{ login, register, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
+
+const mapDispatchToProps = {
+  setUser,
+};
+
+const ConnectedAuthProvider = connect(null, mapDispatchToProps)(AuthProvider);
+
+export { ConnectedAuthProvider as AuthProvider };
 
 export const useAuth = () => {
   return useContext(AuthContext);
