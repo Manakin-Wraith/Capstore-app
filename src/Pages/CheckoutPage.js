@@ -1,13 +1,17 @@
 // CheckoutPage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { confirmOrder } from '../Actions/checkoutActions'; // Make sure this path is correct
 import './CheckoutPage.css';
 
-const CheckoutPage = ({ location }) => {
-  const { totalAmount, vat, shippingCosts} = location.state;
+const CheckoutPage = ({ location, confirmOrder, orderConfirmed }) => {
+  const { totalAmount, vat, shippingCosts } = location.state;
 
   const handleConfirmation = () => {
-    // Implement your confirmation logic here
+    // Dispatch the confirmOrder action
+    confirmOrder();
+    // Implement any additional confirmation logic here
     alert('Order confirmed!');
   };
 
@@ -15,6 +19,7 @@ const CheckoutPage = ({ location }) => {
     // Implement your back to cart logic here, such as redirecting to the cart page
     alert('Redirecting back to cart...');
   };
+
 
   return (
     <div className="checkout-page-container">
@@ -38,4 +43,12 @@ const CheckoutPage = ({ location }) => {
   
 };
 
-export default CheckoutPage;
+const mapStateToProps = (state) => ({
+  orderConfirmed: state.checkout.orderConfirmed,
+});
+
+const mapDispatchToProps = {
+  confirmOrder,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutPage);
