@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Container, Button } from 'react-bootstrap';
-import { navigateBackToCart } from '../Actions/helpPageActions'; // Make sure this path is correct
+import { navigateBackToCart } from '../Actions/helpActions'; // Make sure this path is correct
 import './HelpPage.css';
 
 const HelpPage = ({ navigateBackToCart }) => {
