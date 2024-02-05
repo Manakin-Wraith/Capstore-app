@@ -51,7 +51,7 @@ const CartPage = () => {
 
   const handleHelp = () => {
     // Implement your help logic here, such as displaying a modal or redirecting to a help page.
-    alert('Redirecting to help page...');
+    history.push('/help');
   };
 
   // Define totalCost here, or fetch it from your data source

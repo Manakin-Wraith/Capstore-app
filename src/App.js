@@ -8,6 +8,7 @@ import Header from './Components/Header';
 import RegisterPage from './Pages/RegisterPage';
 import ProductPage from './ProductPage';
 import CartPage from './Pages/CartPage';
+import HelpPage from './Pages/HelpPage';
 import CheckoutPage from './Pages/CheckoutPage';
 
 // Main component that sets up the application's structure using React Router for navigation.
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/products" component={ProductPage} />
             <Route path="/cart" component={CartPage} />
             <Route path="/checkout" component={CheckoutPage} />
+            <Route path="/help" component={HelpPage} />
           </Switch>
         </CartProvider>
       </AuthProvider>
