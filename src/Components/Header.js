@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setUser } from '../Actions/userActions'; 
+import { setUser } from '../Actions/userAction';
 import './Header.css';
 
 // Header component responsible for displaying the navigation bar and user information.

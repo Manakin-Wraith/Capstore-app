@@ -1,7 +1,7 @@
 // AuthContext.js
 import React, { createContext, useContext } from 'react';
 import { connect } from 'react-redux';
-import { setUser } from '../actions/userActions';
+import { setUser } from '../Actions/userAction';
 
 const AuthContext = createContext();
 

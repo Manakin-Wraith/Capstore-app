@@ -3,15 +3,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Container, Button } from 'react-bootstrap';
 import { navigateBackToCart } from '../Actions/helpActions'; // Make sure this path is correct
+import { useHistory } from 'react-router-dom';
 import './HelpPage.css';
 
 const HelpPage = ({ navigateBackToCart }) => {
+  const history = useHistory();
+
   const handleBackToCart = () => {
-    // Dispatch the navigateBackToCart action
+    // Dispatch the action to update the help state
     navigateBackToCart();
+
+    // Handle the navigation logic in the component
+    history.push('/cart');
   };
-
-
+  
   return (
     <Container className="help-page-container">
       <h2>Shipping Information</h2>

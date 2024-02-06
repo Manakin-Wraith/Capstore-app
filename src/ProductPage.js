@@ -1,45 +1,46 @@
 // ProductPage.js
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { useAuth } from './Pages/AuthContext';
-import { useCart } from './Pages/CartContext';
-import ProductInfoModal from './ProductInfoModal'; // Import the new component
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart, setProducts } from './Actions/productActions';
+import ProductInfoModal from './ProductInfoModal';
+import { useAuth } from './Pages/AuthContext'; // Make sure to import useAuth
 import './ProductPage.css';
+
 
 const ProductPage = () => {
   const { user } = useAuth();
-  const [products, setProducts] = useState([]);
-  const { addToCart } = useCart();
+  const products = useSelector((state) => state.product.products); // Adjust the path
+  const dispatch = useDispatch();
 
-  // State for managing modal visibility
-  const [showModal, setShowModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  useEffect(() => {
-    // Fetch products from the API
-    fetch('https://fakestoreapi.com/products')
-      .then((res) => res.json())
-      .then((json) => setProducts(json));
-  }, []);
-
-  const handleAddToCart = (product) => {
-    addToCart(product);
-  };
-
-  const handleShowModal = (product) => {
-    setSelectedProduct(product);
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
+   // State for managing modal visibility
+   const [showModal, setShowModal] = useState(false);
+   const [selectedProduct, setSelectedProduct] = useState(null);
+ 
+   useEffect(() => {
+     fetch('https://fakestoreapi.com/products')
+       .then((res) => res.json())
+       .then((json) => dispatch(setProducts(json))); // Use the setProducts function here
+   }, [dispatch]);
+ 
+   const handleAddToCart = (product) => {
+     dispatch(addToCart(product));
+   };
+ 
+   const handleShowModal = (product) => {
+     setSelectedProduct(product);
+     setShowModal(true);
+   };
+ 
+   const handleCloseModal = () => {
+     setShowModal(false);
+   };
 
   return (
     <div className="product-page-container">
       <h1>Welcome, {user ? user.username : 'Guest'}!</h1>
       <div className="product-list">
-        {products.map((product) => (
+        {products && products.map((product) => (
           <Card key={product.id} className="product-item">
             <Card.Body>
               <div className="product-header">

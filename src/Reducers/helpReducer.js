@@ -1,20 +1,21 @@
-// src/reducers/helpReducer.js
+// helpReducer.js
+import { NAVIGATE_BACK_TO_CART } from '../Actions/helpActions';
+
 const initialState = {
-    // Define any relevant state for the help page
-  };
-  
-  const helpReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case 'NAVIGATE_BACK_TO_CART':
-        // Add logic here if needed
-        return state;
-  
-      // Add more cases as needed
-  
-      default:
-        return state;
-    }
-  };
-  
-  export default helpReducer;
-  
+  // ... other state properties
+};
+
+const helpReducer = (state = initialState, action) => {
+  switch (action.type) {
+    // ... other cases
+
+    case NAVIGATE_BACK_TO_CART:
+      // You can handle any state updates related to navigation here if needed
+      return state;
+
+    default:
+      return state;
+  }
+};
+
+export default helpReducer;
