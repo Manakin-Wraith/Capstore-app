@@ -1,14 +1,15 @@
-/* CartPage.css */
-
+/* Styling for the main container of the cart page */
 .cart-page-container {
   padding: 40px;
 }
 
+/* Styling for the list of items in the cart */
 .cart-list {
   list-style: none;
   padding: 0;
 }
 
+/* Styling for individual items in the cart */
 .cart-item {
   border: 1px solid #ddd;
   margin-bottom: 20px;
@@ -22,31 +23,37 @@
   transition: transform 0.2s;
 }
 
+/* Hover effect on cart items */
 .cart-item:hover {
   transform: scale(1.02);
 }
 
+/* Styling for the details section of each cart item */
 .item-details {
   flex: 1;
 }
 
+/* Styling for the title of each cart item */
 .item-title {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
+/* Styling for the price of each cart item */
 .item-price {
   font-weight: bold;
   font-size: 20px;
   color: #666;
 }
 
+/* Styling for the image of each cart item */
 .item-image {
   max-width: 80px;
   margin-left: 20px;
 }
 
+/* Styling for the remove button of each cart item */
 .remove-button {
   background-color: #ff6961;
   color: #fff;
@@ -60,10 +67,12 @@
   transition: background-color 0.3s;
 }
 
+/* Hover effect on the remove button */
 .remove-button:hover {
   background-color: #ff5050;
 }
 
+/* Styling for the total section at the bottom of the cart */
 .total-section {
   display: flex;
   justify-content: flex-end;
@@ -71,33 +80,39 @@
   margin-top: 20px;
 }
 
+/* Styling for the label in the total section */
 .total-label {
   font-size: 18px;
   margin-right: 10px;
 }
 
+/* Styling for the total amount in the total section */
 .total-amount {
   font-size: 18px;
   font-weight: bold;
   margin-right: 10px;
 }
 
+/* Styling for the shipment section */
 .shipment-section {
   margin-top: 20px;
 }
 
+/* Styling for the shipment information */
 #shipment {
   margin-left: 10px;
   padding: 8px;
   font-size: 14px;
 }
 
+/* Styling for the buttons section at the bottom of the cart */
 .buttons-section {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
+/* Styling for the help button */
 .help-button {
   background-color: #007bff;
   color: #fff;
@@ -109,10 +124,12 @@
   transition: background-color 0.3s;
 }
 
+/* Hover effect on the help button */
 .help-button:hover {
   background-color: #0056b3;
 }
 
+/* Styling for the checkout button */
 .checkout-button {
   background-color: #28a745; /* Green color */
   color: #fff;
@@ -125,6 +142,7 @@
   transition: background-color 0.3s;
 }
 
+/* Hover effect on the checkout button */
 .checkout-button:hover {
   background-color: #218838; /* Darker green color on hover */
 }

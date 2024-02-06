@@ -7,11 +7,10 @@ import * as Yup from 'yup';
 import { useHistory } from 'react-router-dom';
 import './RegisterPage.css';
 
-
+// RegisterPage component
 const RegisterPage = () => {
   const { register } = useAuth();
   const history = useHistory(); // Initialize useHistory
-
 
   // Define Yup schema for form validation
   const registrationSchema = Yup.object().shape({
@@ -33,18 +32,24 @@ const RegisterPage = () => {
     },
     validationSchema: registrationSchema, // Use Yup schema for validation
     onSubmit: async (values) => {
+      // Call the register function from useAuth
       await register(values);
-      history.push('/'); // Navigate to the home page after successful registration
+      // Navigate to the home page after successful registration
+      history.push('/');
     },
   });
 
   return (
     <div className="register-page-container">
       <h2 className="form-title">Register</h2>
+
       {/* Display form-level error */}
       {registerFormik.status && <div className="error-message">{registerFormik.status}</div>}
-      
+
+      {/* Registration form */}
       <form onSubmit={registerFormik.handleSubmit} className="form">
+
+        {/* First Name */}
         <div className="form-group">
           <label className="form-label">
             First Name:
@@ -56,9 +61,11 @@ const RegisterPage = () => {
               className="form-input"
             />
           </label>
+          {/* Display validation error if any */}
           {registerFormik.errors.firstName && <div className="error-message">{registerFormik.errors.firstName}</div>}
         </div>
 
+        {/* Last Name */}
         <div className="form-group">
           <label className="form-label">
             Last Name:
@@ -70,9 +77,11 @@ const RegisterPage = () => {
               className="form-input"
             />
           </label>
+          {/* Display validation error if any */}
           {registerFormik.errors.lastName && <div className="error-message">{registerFormik.errors.lastName}</div>}
         </div>
 
+        {/* Username */}
         <div className="form-group">
           <label className="form-label">
             Username:
@@ -84,9 +93,11 @@ const RegisterPage = () => {
               className="form-input"
             />
           </label>
+          {/* Display validation error if any */}
           {registerFormik.errors.username && <div className="error-message">{registerFormik.errors.username}</div>}
         </div>
 
+        {/* Email */}
         <div className="form-group">
           <label className="form-label">
             Email:
@@ -98,9 +109,11 @@ const RegisterPage = () => {
               className="form-input"
             />
           </label>
+          {/* Display validation error if any */}
           {registerFormik.errors.email && <div className="error-message">{registerFormik.errors.email}</div>}
         </div>
 
+        {/* Password */}
         <div className="form-group">
           <label className="form-label">
             Password:
@@ -112,9 +125,11 @@ const RegisterPage = () => {
               className="form-input"
             />
           </label>
+          {/* Display validation error if any */}
           {registerFormik.errors.password && <div className="error-message">{registerFormik.errors.password}</div>}
         </div>
 
+        {/* Submit button */}
         <button type="submit" className="submit-button">
           Register
         </button>
@@ -123,6 +138,7 @@ const RegisterPage = () => {
   );
 };
 
+// Connect the component to Redux
 const mapDispatchToProps = {
   registerUser,
 };
