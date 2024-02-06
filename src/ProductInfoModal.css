@@ -1,5 +1,4 @@
-/* ProductInfoModal.css */
-
+/* Styles for the product information modal container */
 .product-info-modal {
   display: flex;
   align-items: center;
@@ -7,6 +6,7 @@
   height: 100vh;
 }
 
+/* Styles for the content within the product information modal */
 .product-info-content {
   max-width: 600px;
   width: 100%;
@@ -18,20 +18,24 @@
   transition: transform 0.2s;
 }
 
+/* Hover effect for the product information content */
 .product-info-content:hover {
   transform: scale(1.02);
 }
 
+/* Styles for paragraphs within the product information content */
 .product-info-content p {
   font-size: 16px;
   color: #333;
 }
 
+/* Styles for the title of the product information modal */
 .product-info-modal-title {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
+/* Styles for the close button in the product information modal */
 .product-info-close {
   margin-top: 20px;
   background-color: #dc3545; /* Red color */
@@ -44,6 +48,7 @@
   transition: background-color 0.3s;
 }
 
+/* Hover effect for the close button */
 .product-info-close:hover {
   background-color: #c82333; /* Darker red color on hover */
 }

@@ -1,55 +1,62 @@
-/* ProductPage.css */
-
+/* Styling for the product page container */
 .product-page-container {
   padding: 20px;
-  text-align: center; /* Center text */
+  text-align: center;
 }
 
+/* Styling for the product list, including spacing and flex properties */
 .product-list {
   display: flex;
-  justify-content: space-around; /* Improved spacing for responsiveness */
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
 }
 
+/* Styling for each product item */
 .product-item {
   width: 300px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  overflow: hidden; /* Ensure rounded corners */
-  transition: transform 0.2s; /* Add a smooth transition on hover */
+  overflow: hidden;
+  transition: transform 0.2s;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
+/* Enlarging the product item on hover */
 .product-item:hover {
-  transform: scale(1.05); /* Enlarge on hover */
+  transform: scale(1.05);
 }
 
+/* Styling for the product title */
 .product-title {
-  font-size: 18px; /* Slightly reduce font size */
+  font-size: 18px;
   font-weight: bold;
   margin: 10px 0;
 }
 
+/* Styling for the product details */
 .product-details {
-  margin-top: 8px; /* Reduced top margin */
-  color: #777; /* Dim the details text color */
+  margin-top: 8px;
+  color: #777;
 }
 
+/* Styling for the product image */
 .product-image {
-  width: 100%; /* Make image fill the container width */
-  max-height: 150px; /* Increased max height for better visibility */
-  object-fit: contain; /* Maintain aspect ratio and cover the container */
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
 }
 
+/* Styling for the product body */
 .product-body {
   padding: 10px;
 }
 
+/* Styling for the "Add to Cart" button */
 .add-to-cart-button {
-  background-color: #007bff; /* Blue primary color */
+  background-color: #007bff;
   color: #fff;
   padding: 10px 15px;
   cursor: pointer;
@@ -60,10 +67,12 @@
   transition: background-color 0.3s;
 }
 
+/* Darker shade on "Add to Cart" button hover */
 .add-to-cart-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #0056b3;
 }
 
+/* Additional styling for product items */
 .product-item {
   position: relative;
 }
@@ -75,26 +84,25 @@
   z-index: 1;
 }
 
-/* ProductPage.css */
-
-
+/* Styling for the info button and info text */
 .info-button,
 .info-text {
-  color: #fff; /* Adjust to a more subtle color */
-  padding: 0; /* Decreased padding */
+  color: #fff;
+  padding: 0;
   padding-top: 5px;
   padding-left: 5px;
   padding-right: 5px;
   cursor: pointer;
   border: none;
-  border-radius: 50px; /* Smaller border radius */
+  border-radius: 50px;
   font-weight: bold;
-  font-size: 14px; /* Decreased font size */
+  font-size: 14px;
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Lighter background and darker text on info button and text hover */
 .info-button:hover,
 .info-text:hover {
-  background-color: #f5f5f5; /* Lighter background on hover */
-  color: #333; /* Darker text on hover */
+  background-color: #f5f5f5;
+  color: #333;
 }
