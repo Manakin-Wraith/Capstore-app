@@ -18,11 +18,6 @@ const CheckoutPage = ({ location, confirmOrder, orderConfirmed }) => {
     alert('Order confirmed!');
   };
 
-  // Function to handle returning to the cart
-  const handleBackToCart = () => {
-    // Implement your back to cart logic here, such as redirecting to the cart page
-    alert('Redirecting back to cart...');
-  };
 
   // Rendering the CheckoutPage component
   return (
