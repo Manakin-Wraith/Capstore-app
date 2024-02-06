@@ -5,9 +5,9 @@ import './ProductInfoModal.css';
 
 const ProductInfoModal = ({ showModal, handleCloseModal, product }) => {
   return (
-    <Modal show={showModal} onHide={handleCloseModal} centered className="product-info-modal">
+    <Modal show={showModal} onHide={handleCloseModal} centered className="product-info-modal" backdrop="static">
       <Modal.Header closeButton>
-        <Modal.Title>Product Information</Modal.Title>
+      <Modal.Title className="product-info-modal-title">Product Information</Modal.Title>
       </Modal.Header>
       <Modal.Body className="product-info-content">
         {product && (

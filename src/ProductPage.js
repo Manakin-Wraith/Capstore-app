@@ -48,7 +48,7 @@ const ProductPage = () => {
                   onClick={() => handleShowModal(product)}
                   className="info-button"
                 >
-                <p>Info</p>
+                <p className="info-text">Info</p>
                 </Button>
               </div>
               <Card.Img
